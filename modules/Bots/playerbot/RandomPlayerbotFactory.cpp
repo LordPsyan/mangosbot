@@ -188,9 +188,10 @@ string RandomPlayerbotFactory::CreateRandomBotName(uint8 gender)
         return "";
     }
 
-	fields = result->Fetch();
-	delete result;
-    return fields[0].GetString();
+    fields = result->Fetch();
+    std::string tempString = fields[0].GetString();
+    delete result;
+    return tempString;
 }
 
 
